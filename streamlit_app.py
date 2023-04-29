@@ -3,6 +3,9 @@ import numpy as np
 import streamlit as st
 #====================================Codigo Principal==================================================
 uploaded_file = st.file_uploader("Carregue o Arquivo!")
+
 if uploaded_file is not None:
-    dataframe = pd.read_csv(r"C:\Users\Lucas\Desktop\Relatorio.csv",encoding="ISO-8859-1", sep = ';')
-    st.write(dataframe)
+    for uploaded_file in uploaded_files:
+    bytes_data = uploaded_file.read()
+    st.write("filename:", uploaded_file.name)
+    st.write(bytes_data)
